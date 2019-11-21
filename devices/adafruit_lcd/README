@@ -1,0 +1,28 @@
+Display Development Tools USB Backpack Kit w/ 16x2 Positive LCD
+
+prereq:
+sudo usermod -a -G dialout $USER
+
+ubuntu puts this device on /dev/ttyACM0 by default. If it works your device
+subsystem will send a bunch of AT control commands when it connects (and they
+just get passed right along the I2C bus straight to the text display
+
+example:
+
+~/air-ponics/devices/adafruit_lcd$ ./waitStart.sh 
+waiting for device file /dev/ttyACM0
+Device connected.
+Permissions established.
+Checking device ready to receieve...
+Screen cleared.
+done.
+~/air-ponics/devices/adafruit_lcd$
+
+This will flash the word "Ready" in white on the display and then leave the 
+current time/date. 
+
+adafruit documentation:
+https://learn.adafruit.com/usb-plus-serial-backpack/command-reference
+
+amazon linkage: 
+https://www.amazon.com/gp/product/B01AB288M8
