@@ -12,4 +12,4 @@ if [ ! -w $device ] ; then
   exit 2
 fi
 
-echo "$1" > $device
+echo -n "$1" > $device
